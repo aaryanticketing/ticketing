@@ -11,9 +11,9 @@ configurable string password = ?;
 configurable string database = ?;
 
 type User record {|
-    string user_email;
+    string email;
     string user_type;
-    string user_id;
+    string id;
     string user_name;
 |};
 
@@ -41,10 +41,10 @@ service / on new http:Listener(8080) {
 
     resource function post users(@http:Payload User user) returns User|error {
         string uuid1 = uuid:createType1AsString();
-        user.user_id = uuid1;
+        user.id = uuid1;
         _ = check self.db->execute(`
             INSERT INTO Users (id, user_type, email, user_name)
-            VALUES (${user.user_id}, ${user.user_type}, ${user.user_email}, ${user.user_name});`);
+            VALUES (${user.id}, ${user.user_type}, ${user.email}, ${user.user_name});`);
         return user;
     }
 }
