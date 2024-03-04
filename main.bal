@@ -4,11 +4,11 @@ import ballerinax/mysql;
 import ballerinax/mysql.driver as _;
 import ballerina/uuid;
 
-configurable string host = ?;
-configurable int port = ?;
-configurable string user_name_db = ?;
-configurable string password = ?;
-configurable string database = ?;
+configurable string host = "mysql-b0bbee91-31fa-468c-a47f-53c8b53b9dbb-db3031748966-choreo.a.aivencloud.com";
+configurable int port = 25957;
+configurable string user_name_db = "avnadmin";
+configurable string password = "AVNS_Slhr7YSYQ6Kc1dL9qAn";
+configurable string database = "defaultdb";
 
 type User record {|
     string user_email;
