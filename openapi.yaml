@@ -98,17 +98,17 @@ components:
           format: int32
     User:
       required:
-      - user_email
-      - user_id
+      - email
+      - id
       - user_name
       - user_type
       type: object
       properties:
-        user_email:
+        email:
           type: string
         user_type:
           type: string
-        user_id:
+        id:
           type: string
         user_name:
           type: string
